@@ -1,19 +1,18 @@
 site_name: 经天纬地的笔记
-copyright: Copyright &copy; 2021 - 2023 Zouwei 
+copyright: Copyright &copy; 2021 - 2023 Zouwei Pan
 site_description: 经天纬地的笔记本
 repo_name: WaynePancho/note
 repo_url: https://github.com/WaynePancho/note
 
-extra:
-  generator: false
+# extra:
+#   generator: false
 
 theme:
   name: material
   language: 'zh'
   icon: 
     logo: material/notebook-outline
-    custom_dir: overrides
-    features:
+  features:
     - content.code.annotate
     - navigation.tracking
     - navigation.tabs
@@ -22,25 +21,23 @@ theme:
     - navigation.path
   font: false
   palette:
-      # Palette toggle for automatic mode
-      - media: "(prefers-color-scheme)"
-        toggle:
-          icon: material/brightness-auto
-          name: Switch to light mode
-
       # Palette toggle for light mode
       - media: "(prefers-color-scheme: light)"
         scheme: default 
         toggle:
           icon: material/brightness-7
           name: Switch to dark mode
-
       # Palette toggle for dark mode
       - media: "(prefers-color-scheme: dark)"
         scheme: slate
         toggle:
           icon: material/brightness-4
           name: Switch to system preference
+      # Palette toggle for automatic mode
+      - media: "(prefers-color-scheme)"
+        toggle:
+          icon: material/brightness-auto
+          name: Switch to light mode
   features:
     - navigation.indexes
 
@@ -97,7 +94,8 @@ extra_css:
   - css/changelog_extra.css
   # - css/heti.css
 
-
+plugins:
+    - changelog
 
 
 nav:
