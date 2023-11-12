@@ -2,7 +2,7 @@ site_name: 经天纬地的笔记
 copyright: Copyright &copy; 2021 - 2023 Zouwei 
 site_description: 经天纬地的笔记本
 repo_name: WaynePancho/note
-repo_url: https://github.com/WaynePancho/WaynePancho.github.io
+repo_url: https://github.com/WaynePancho/note
 
 extra:
   generator: false
