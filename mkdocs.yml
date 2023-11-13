@@ -105,8 +105,8 @@ nav:
   - 物理:
     - physics/index.md
     - 经典力学:
-      - physics/经典力学/index.md
-      - 从最小作用量原理导出牛顿第一和第二定律: physics/经典力学/一、从最小作用量原理导出牛顿第一和第二定律.md
+      - physics/classical_mechanics/index.md
+      - 从最小作用量原理导出牛顿第一和第二定律: physics/classical_mechanics/1.md
   - 数学:
     - math/index.md 
     - 微积分:
