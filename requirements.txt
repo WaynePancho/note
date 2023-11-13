@@ -1,0 +1,3 @@
+mkdocs-material
+mkdocs-changelog-plugin
+# 其他依赖...
