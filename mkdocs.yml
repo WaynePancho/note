@@ -110,7 +110,7 @@ nav:
   - 数学:
     - math/index.md 
     - 微积分:
-      - math/微积分/index.md
-      - 泰勒展开的几种形式: math/微积分/泰勒展开的几种形式.md
+      - math/calculus/index.md
+      - 泰勒展开的几种形式: math/calculus/1.md
   - 计科: 
     - computer/index.md
