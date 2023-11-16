@@ -1,4 +1,4 @@
-site_name: 经天纬地的笔记
+site_name: 经天纬地的笔记本
 copyright: Copyright &copy; 2021 - 2023 Zouwei Pan
 site_description: 经天纬地的笔记本
 repo_name: WaynePancho/note
@@ -46,6 +46,7 @@ markdown_extensions:
       permalink: true
       toc_depth: 4
   - meta
+  - tables
   - def_list
   - attr_list
   - md_in_html
@@ -62,15 +63,15 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.arithmatex:
       generic: true
-  # - pymdownx.emoji:
-  #     emoji_index: !!python/name:materialx.emoji.twemoji
-  #     emoji_generator: !!python/name:materialx.emoji.to_svg
-  # - pymdownx.tabbed:
-  #     alternate_style: true 
-  # - pymdownx.tasklist:
-  #     custom_checkbox: true
-  # - pymdownx.highlight:
-  #     anchor_linenums: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
 
 
 extra_javascript:
@@ -89,7 +90,7 @@ extra_css:
   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
   - css/tasklist.css
   - css/custom.css
-  - css/card.css
+  # - css/card.css
   - css/flink.css
   - css/changelog_extra.css
   # - css/heti.css
@@ -107,6 +108,17 @@ nav:
     - 经典力学:
       - physics/classical_mechanics/index.md
       - 从最小作用量原理导出牛顿第一和第二定律: physics/classical_mechanics/1.md
+    - 计算物理:
+      - physics/computational_physics/index.md
+      - 微分方程数值解:
+        - physics/computational_physics/DE/index.md
+        - 冷却问题: 
+          - physics/computational_physics/DE/cooling/index.md
+          - 欧拉算法: physics/computational_physics/DE/cooling/1.md
+          - 作业题: physics/computational_physics/DE/cooling/lab.md
+    - 粒子物理:
+      - physics/particle_physics/index.md
+      - 标准模型中的粒子: physics/particle_physics/1.md
   - 数学:
     - math/index.md 
     - 微积分:

@@ -269,3 +269,11 @@ input#mkdocs-content-password {
   content: "实验报告"
 }
 
+.md-typeset table {
+  width: auto;
+}
+
+.md-typeset table td,
+.md-typeset table th {
+  width: auto;
+}
