@@ -36,7 +36,7 @@ result_cream = opt.minimize_scalar(objective_function, args=(temp_cream[0], temp
 r_cream = result_cream.x
 
 # 显示求出的咖啡冷却常数
-r_black, r_cream
+print(r_black,r_cream)
 
 # 使用计算出的冷却常数 r 来绘制温度随时间变化的图表
 

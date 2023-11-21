@@ -119,6 +119,10 @@ nav:
     - 粒子物理:
       - physics/particle_physics/index.md
       - 标准模型中的粒子: physics/particle_physics/1.md
+    - 散射振幅:
+      - physics/scattering_amplitude/index.md
+      - 符号约定: physics/scattering_amplitude/1.md
+      - Yukawa理论的树级振幅: physics/scattering_amplitude/2.md
   - 数学:
     - math/index.md 
     - 微积分:

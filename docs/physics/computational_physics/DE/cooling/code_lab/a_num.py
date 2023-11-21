@@ -31,7 +31,7 @@ def objective_function(r, T_initial, temp, time_points):
     return np.sum((temp - T_model)**2)
 
 # 创建具有更高密度的时间点数组
-time_continuous = np.linspace(0, max(time), 500)
+time_continuous = np.linspace(0, max(time), 500) # 即确定时间步长
 
 # 寻找冷却常数 r 的最佳估计
 result_black = minimize_scalar(objective_function, args=(temp_black[0], temp_black, time_continuous), bounds=(0.001, 0.1), method='bounded')
@@ -39,6 +39,8 @@ r_black = result_black.x
 
 result_cream = minimize_scalar(objective_function, args=(temp_cream[0], temp_cream, time_continuous), bounds=(0.001, 0.1), method='bounded')
 r_cream = result_cream.x
+
+print(r_black,r_cream)
 
 # 使用欧拉方法计算预测温度
 T_pred_black = euler_solve(r_black, temp_black[0], time_continuous)
