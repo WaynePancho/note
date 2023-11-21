@@ -254,6 +254,7 @@ times_black = time_for_temp_reduction(T_initial_black, r_black, time_reduction_f
 在不使用计算机术语的情况下，这个结果说明**温度每下降为当前的一半花费的时间大致相同**，在这里大约是$26.7\text{min}$。
 
 这个结果可以由解析解形式明显看出
+
 $$
 T(t) = T_{\text{env}} + (T_{\text{intial}} - T_{\text{env}})e^{-rt}
 $$
