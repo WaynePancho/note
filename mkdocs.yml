@@ -116,6 +116,9 @@ nav:
           - physics/computational_physics/DE/cooling/index.md
           - 欧拉算法: physics/computational_physics/DE/cooling/1.md
           - 作业题: physics/computational_physics/DE/cooling/lab.md
+        - 自由落体问题: 
+          - physics/computational_physics/DE/free_fall/index.md
+          - 作业题: physics/computational_physics/DE/free_fall/lab.md
     - 粒子物理:
       - physics/particle_physics/index.md
       - 标准模型中的粒子: physics/particle_physics/1.md

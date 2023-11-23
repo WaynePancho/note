@@ -103,7 +103,77 @@ r_{\text{black}} = 0.02589108681175482\text{min}^{-1}\\
 r_{\text{cream}} = 0.023674438444012683\text{min}^{-1}
 $$
 
+本题还可使用其他方法确定$r$，一种直观的想法是线性回归分析，直接解出如下解析解形式
 
+$$
+\frac{\mathrm{d}}{\mathrm{d} t}T(t) = r(T_{\text{env}}-T(t)) \Rightarrow \frac{\mathrm{d}T}{T_{\text{env}} - T} = -r\mathrm{d}t
+$$
+
+积分得
+
+$$
+\ln |T_{\text{env}} - T(t)| = -rt + C
+$$
+
+在数据中$T_{\text{env}} - T(t)<0$，去掉绝对值符号，得
+
+$$
+\ln (T(t) - T_{\text{env}}) = -rt + C
+$$
+
+现在对其做线性回归，首先导入所需的库
+
+```{.python .copy}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import linregress
+```
+
+实验数据如之前一样定义，定义一个函数来进行线性回归以估计$r$的值
+
+```{.python .copy}
+def estimate_r(time, temp, T_env):
+    ln_temp_diff = np.log(temp - T_env)
+    slope, _, _, _, _ = linregress(time, ln_temp_diff)
+    return -slope
+```
+
+计算冷却常数
+
+```{.python .copy}
+r_black = estimate_r(time, temp_black, T_env)
+r_cream = estimate_r(time, temp_cream, T_env)
+```
+
+使用`print`函数输出结果，结果为
+
+```
+0.0227619431748376 0.020563592266497264
+```
+
+这说明线性回归方法解出的结果为
+
+$$
+r_{\text{black}} = 0.0227619431748376\text{min}^{-1}\\
+r_{\text{cream}} = 0.020563592266497264\text{min}^{-1}
+$$
+
+使用比较方差大小的隐含标准来确认哪种方法更好，计算两种预测与实验数据的方差
+
+```{.python .copy}
+r_black_linear = estimate_r(time, temp_black, T_env)
+r_cream_linear = estimate_r(time, temp_cream, T_env)
+variance_black_numeric, variance_cream_numeric = calculate_variance('numeric', temp_black, temp_black[0])
+variance_black_linear, variance_cream_linear = calculate_variance('linear', temp_black, temp_black[0])
+```
+
+使用`print(variance_black_numeric, variance_cream_numeric, variance_black_linear, variance_cream_linear)`将结果打印出来，输出为
+
+```
+12.669843750000004 36.85020833333334 9.324010416666669 27.597430555555558
+```
+
+对黑咖啡和加奶油咖啡，线性回归方法给出的方差都较小，因此它比较好。但是，考虑到适用性，线性回归方法要求明确观察到对数变换来找出线性依赖，这使得我们需要解出解析解，而大多数时候我们只能获得数值结果，从这个角度看，我认为目标函数最小化法是更好的方法，我倾向于使用它，所以在后面的题目中我用到的都会是目标函数最小化方法。
 
 ## (b) 可视化
 
@@ -140,7 +210,7 @@ plt.grid(True)
 plt.show()
 ```
 
-输出为
+输出如下，其中`plot`函数自动将欧拉法解出来的离散数据点连成了虚线，而实验数据点以离散点的形式标记在图中
 
 ![](../../../../assets/images/physics/computational_physics/DE/2.png)
 
@@ -338,7 +408,7 @@ $$
 - 根据实验数据估计$r(T)$
 - 利用Runge-Kutta法数值求解方程来观察实验数据与拟合曲线的符合情况
 
-以黑咖啡为例，首先还是导入所需的库
+由于方程明显变得非线性，所以使用Runge-Kutta法数值求解。以黑咖啡为例，首先还是导入所需的库
 
 ```{.python .copy}
 import numpy as np
