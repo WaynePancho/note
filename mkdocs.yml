@@ -119,6 +119,23 @@ nav:
         - 自由落体问题: 
           - physics/computational_physics/DE/free_fall/index.md
           - 作业题: physics/computational_physics/DE/free_fall/lab.md
+      - 数值积分和数值微分:
+        - physics/computational_physics/dd_int/index.md
+        - 数值微分:
+          - physics/computational_physics/dd_int/dd/index.md
+          - 作业题: physics/computational_physics/dd_int/dd/lab.md
+        - 数值积分:
+          - physics/computational_physics/dd_int/int/index.md
+          - 作业题: physics/computational_physics/dd_int/int/lab.md
+        - 耦合谐振子:
+          - physics/computational_physics/dd_int/HOs/index.md
+          - 作业题: physics/computational_physics/dd_int/HOs/lab.md
+      - 求根:
+        - physics/computational_physics/root/index.md
+        - 作业题: physics/computational_physics/root/lab/index.md
+      - 混沌:
+        - physics/computational_physics/stable/index.md
+        - 作业题: physics/computational_physics/stable/lab/index.md
     - 粒子物理:
       - physics/particle_physics/index.md
       - 标准模型中的粒子: physics/particle_physics/1.md
